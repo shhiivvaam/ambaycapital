@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { SERVICES } from "@/lib/constants";
 import SectionTag from "@/components/ui/SectionTag";
 
@@ -47,44 +48,45 @@ export default function Services() {
           border border-[rgba(201,168,76,0.2)] rounded-xl overflow-hidden"
       >
         {SERVICES.map((service) => (
-          <motion.div
-            key={service.name}
-            whileHover={{ backgroundColor: "rgba(201,168,76,0.06)" }}
-            className="bg-[#112240] p-7 md:p-9 relative cursor-pointer group overflow-hidden"
-          >
-            {/* Bottom gold line on hover */}
-            <motion.span
-              className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#c9a84c] to-[#e2c97e]"
-              initial={{ scaleX: 0 }}
-              whileHover={{ scaleX: 1 }}
-              transition={{ duration: 0.3 }}
-            />
-
-            {/* Arrow */}
-            <span
-              className="absolute top-7 right-6 text-[#c9a84c] text-lg 
-              opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 
-              transition-all duration-300"
+          <Link key={service.name} href={`/services/${service.slug}`}>
+            <motion.div
+              whileHover={{ backgroundColor: "rgba(201,168,76,0.06)" }}
+              className="bg-[#112240] h-full p-7 md:p-9 relative cursor-pointer group overflow-hidden"
             >
-              →
-            </span>
+              {/* Bottom gold line on hover */}
+              <motion.span
+                className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#c9a84c] to-[#e2c97e]"
+                initial={{ scaleX: 0 }}
+                whileHover={{ scaleX: 1 }}
+                transition={{ duration: 0.3 }}
+              />
 
-            {/* Icon */}
-            <div
-              className="w-12 h-12 rounded-[10px] flex items-center justify-center 
-              text-2xl mb-5 bg-[rgba(201,168,76,0.1)] 
-              group-hover:bg-[rgba(201,168,76,0.18)] transition-colors duration-300"
-            >
-              {service.icon}
-            </div>
+              {/* Arrow */}
+              <span
+                className="absolute top-7 right-6 text-[#c9a84c] text-lg 
+                opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 
+                transition-all duration-300"
+              >
+                →
+              </span>
 
-            <h3 className="font-serif text-xl font-medium mb-2.5 text-white">
-              {service.name}
-            </h3>
-            <p className="text-[13px] text-[#8a9ab5] leading-relaxed">
-              {service.desc}
-            </p>
-          </motion.div>
+              {/* Icon */}
+              <div
+                className="w-12 h-12 rounded-[10px] flex items-center justify-center 
+                text-2xl mb-5 bg-[rgba(201,168,76,0.1)] 
+                group-hover:bg-[rgba(201,168,76,0.18)] transition-colors duration-300"
+              >
+                {service.icon}
+              </div>
+
+              <h3 className="font-serif text-xl font-medium mb-2.5 text-white">
+                {service.name}
+              </h3>
+              <p className="text-[13px] text-[#8a9ab5] leading-relaxed">
+                {service.desc}
+              </p>
+            </motion.div>
+          </Link>
         ))}
       </motion.div>
     </section>
