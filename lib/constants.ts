@@ -16,41 +16,49 @@ export const SERVICES = [
   {
     icon: "🛡️",
     name: "Life Insurance",
+    slug: "life-insurance",
     desc: "Term plans, child plans, and retirement-linked policies to secure your loved ones' future.",
   },
   {
     icon: "❤️",
     name: "Health Insurance",
+    slug: "health-insurance",
     desc: "Family floater, senior citizen plans, and critical illness covers for complete health protection.",
   },
   {
     icon: "📈",
     name: "Mutual Funds",
+    slug: "mutual-funds",
     desc: "SIP investments, ELSS tax saving, and long-term wealth creation through curated fund selection.",
   },
   {
     icon: "🚗",
     name: "Motor Insurance",
+    slug: "motor-insurance",
     desc: "Comprehensive car and bike insurance with hassle-free renewals and claim assistance.",
   },
   {
     icon: "🏦",
     name: "Financial Planning",
+    slug: "financial-planning",
     desc: "Personalised plans for tax saving, wealth management, and achieving your financial goals.",
   },
   {
     icon: "🌅",
     name: "Retirement Planning",
+    slug: "retirement-planning",
     desc: "Build a stress-free retirement with the right corpus strategy, annuities, and pension plans.",
   },
   {
     icon: "🏢",
     name: "Business Insurance",
+    slug: "business-insurance",
     desc: "Protect your enterprise with comprehensive business liability, fire, and asset coverage.",
   },
   {
     icon: "✈️",
     name: "Travel Insurance",
+    slug: "travel-insurance",
     desc: "Domestic and international travel coverage for medical emergencies and trip cancellations.",
   },
 ];
