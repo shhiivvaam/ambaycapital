@@ -1,14 +1,14 @@
-export const WHATSAPP_NUMBER = "91XXXXXXXXXX";
+export const WHATSAPP_NUMBER = "9818556671";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
-export const CONTACT_EMAIL = "hello@ambaycapital.in";
-export const CONTACT_PHONE = "+91 XXXXX XXXXX";
-export const CONTACT_ADDRESS = "Your City, India";
+export const CONTACT_EMAIL = "ambaycapital8@gmail.com";
+export const CONTACT_PHONE = "+91 98185 56671";
+export const CONTACT_ADDRESS = "Uttar Pradesh, India";
 
 export const STATS = [
-  { number: "500", suffix: "+", label: "Families Protected" },
+  { number: "5000", suffix: "+", label: "Families Protected" },
   { number: "₹20", suffix: "Cr+", label: "Investments Managed" },
-  { number: "10", suffix: "+", label: "Years of Expertise" },
+  { number: "26", suffix: "+", label: "Years of Expertise" },
   { number: "97", suffix: "%", label: "Claim Settlement Rate" },
 ];
 
