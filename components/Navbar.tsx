@@ -4,10 +4,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const NAV_LINKS = [
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About" },
-  { href: "#calculators", label: "Calculators" },
-  { href: "#testimonials", label: "Clients" },
+  { href: "/#services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
+  { href: "/#calculators", label: "Calculators" },
 ];
 
 export default function Navbar() {
@@ -60,9 +60,17 @@ export default function Navbar() {
             </Link>
           </li>
         ))}
-        <li>
+        <li className="flex items-center gap-4">
           <Link
-            href="#contact"
+            href="#"
+            className="px-5 py-[9px] rounded-sm font-medium text-sm
+              border border-[#c9a84c] text-[#c9a84c]
+              hover:bg-[rgba(201,168,76,0.1)] transition-colors"
+          >
+            Client Portal
+          </Link>
+          <Link
+            href="/#contact"
             className="px-6 py-[10px] rounded-sm font-medium text-sm
               bg-gradient-to-br from-[#c9a84c] to-[#e2c97e] text-[#0a1628]
               hover:opacity-90 transition-opacity"
@@ -107,14 +115,24 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="#contact"
-            onClick={() => setMobileOpen(false)}
-            className="mt-2 text-center px-6 py-3 rounded-sm font-medium text-sm
-              bg-gradient-to-br from-[#c9a84c] to-[#e2c97e] text-[#0a1628]"
-          >
-            Book Consultation
-          </Link>
+          <div className="flex flex-col gap-3 mt-2">
+            <Link
+              href="#"
+              onClick={() => setMobileOpen(false)}
+              className="text-center px-6 py-3 rounded-sm font-medium text-sm
+                border border-[#c9a84c] text-[#c9a84c] transition-colors"
+            >
+              Client Portal
+            </Link>
+            <Link
+              href="/#contact"
+              onClick={() => setMobileOpen(false)}
+              className="text-center px-6 py-3 rounded-sm font-medium text-sm
+                bg-gradient-to-br from-[#c9a84c] to-[#e2c97e] text-[#0a1628]"
+            >
+              Book Consultation
+            </Link>
+          </div>
         </motion.div>
       )}
     </motion.nav>
