@@ -206,7 +206,7 @@ export const BOT_KNOWLEDGE: Record<string, BotMessage> = {
 
   // ── ADVISOR / CONTACT ──
   talk_to_advisor: {
-    text: "Excellent! 🤝 Our advisors are available **Mon–Sat, 9am–7pm IST**.\n\nYou can reach us via:\n\n📞 **Phone / WhatsApp:** "+91 98185 56671"\n✉️ **Email:** ambaycapital8@gmail.com\n📍 **Office:** Greater Noida, Sector 1, UP\n\nOr, the fastest route — **send us a WhatsApp message right now!**",
+    text: "Excellent! 🤝 Our advisors are available **Mon–Sat, 9am–7pm IST**.\n\nYou can reach us via:\n\n📞 **Phone / WhatsApp:** +91 98185 56671\n✉️ **Email:** ambaycapital8@gmail.com\n📍 **Office:** Greater Noida, Sector 1, UP\n\nOr, the fastest route — **send us a WhatsApp message right now!**",
     options: [
       { label: "💬 Open WhatsApp Now", value: "whatsapp" },
       { label: "📋 Fill Consultation Form", value: "consultation_form" },

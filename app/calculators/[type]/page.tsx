@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ChatBot from "@/components/ui/ChatBot";
-import Calculators from "@/components/sections/Calculators";
+import Calculators, { CalcTab } from "@/components/sections/Calculators";
 
 export function generateStaticParams() {
   return [
@@ -16,7 +16,7 @@ export default async function CalculatorPage({ params }: { params: Promise<{ typ
   const { type } = await params;
   
   // Mapping the URL segment to the Calculator's internal state types
-  const tabType = ["sip", "retirement", "insurance", "emi"].includes(type) ? type as any : "sip";
+  const tabType = ["sip", "retirement", "insurance", "emi"].includes(type) ? type as CalcTab : "sip";
 
   return (
     <main className="min-h-screen bg-[#060f1e]">

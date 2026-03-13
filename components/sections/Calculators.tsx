@@ -12,7 +12,7 @@ import {
   calcEMI,
 } from "@/lib/calculators";
 
-type CalcTab = "sip" | "retirement" | "insurance" | "emi";
+export type CalcTab = "sip" | "retirement" | "insurance" | "emi";
 
 interface SliderProps {
   label: string;

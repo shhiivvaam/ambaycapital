@@ -300,7 +300,7 @@ export default function ChatBot() {
               style={{ background: "linear-gradient(135deg, #1a3356, #0f2444)", border: "1px solid rgba(201,168,76,0.3)" }}
               onClick={handleOpen}
             >
-              👋 Hi! I'm <strong className="text-[#c9a84c]">Arjun</strong>, your AI financial advisor. Got questions about insurance or investments?
+              👋 Hi! I&apos;m <strong className="text-[#c9a84c]">Arjun</strong>, your AI financial advisor. Got questions about insurance or investments?
               <div className="absolute -bottom-2 right-4 w-4 h-2 overflow-hidden">
                 <div className="w-4 h-4 rotate-45 bg-[#1a3356] border border-[rgba(201,168,76,0.3)]" />
               </div>
