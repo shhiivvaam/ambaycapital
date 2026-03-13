@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambay Capital – Insurance, Investments & Wealth Planning</title>
+    <meta name="description"
+        content="Ambay Capital – Expert insurance, mutual fund, and wealth planning services for every stage of life. Book a free consultation today.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0a1628;
+            --navy-mid: #112240;
+            --navy-light: #1a3460;
+            --gold: #c9a84c;
+            --gold-light: #e2c97e;
+            --gold-pale: #f5e9c8;
+            --cream: #faf8f3;
+            --white: #ffffff;
+            --text-muted: #8a9ab5;
+            --border: rgba(201, 168, 76, 0.2);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--navy);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 3px;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 0 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 76px;
+            background: rgba(10, 22, 40, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--navy) !important;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 500 !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 120px 5% 80px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(201, 168, 76, 0.07) 0%, transparent 60%),
+                linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 60%, #0d1f3c 100%);
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(201, 168, 76, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201, 168, 76, 0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 80%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 680px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(201, 168, 76, 0.1);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--gold-light);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            animation: fadeUp 0.8s ease both;
+        }
+
+        .hero-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1)
+            }
+
+            50% {
+                opacity: .5;
+                transform: scale(1.3)
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(42px, 6vw, 72px);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            animation: fadeUp 0.8s 0.1s ease both;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold);
+            display: block;
+        }
+
+        .hero-sub {
+            font-size: 17px;
+            font-weight: 300;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 44px;
+            max-width: 520px;
+            animation: fadeUp 0.8s 0.2s ease both;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            animation: fadeUp 0.8s 0.3s ease both;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            color: var(--navy);
+            padding: 15px 32px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.25);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(201, 168, 76, 0.35);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 15px 32px;
+            border-radius: 4px;
+            font-weight: 400;
+            font-size: 15px;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .hero-visual {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42%;
+            max-width: 520px;
+            animation: fadeIn 1.2s 0.4s ease both;
+        }
+
+        .hero-card-stack {
+            position: relative;
+            height: 420px;
+        }
+
+        .hero-card {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(201, 168, 76, 0.15);
+            border-radius: 16px;
+            padding: 28px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-card-main {
+            width: 340px;
+            top: 40px;
+            left: 40px;
+            background: linear-gradient(135deg, rgba(17, 34, 64, 0.9), rgba(26, 52, 96, 0.9));
+        }
+
+        .hero-card-float1 {
+            width: 220px;
+            top: 0;
+            right: 0;
+            background: rgba(201, 168, 76, 0.08);
+            border-color: rgba(201, 168, 76, 0.25);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .hero-card-float2 {
+            width: 200px;
+            bottom: 30px;
+            left: 0;
+            background: rgba(201, 168, 76, 0.06);
+            border-color: rgba(201, 168, 76, 0.2);
+            animation: float 4s 1.5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-10px)
+            }
+        }
+
+        .card-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gold);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .card-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 500;
+            color: var(--white);
+            line-height: 1;
+        }
+
+        .card-sub {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        .card-sparkline {
+            margin-top: 16px;
+            height: 40px;
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
+        }
+
+        .sparkline-bar {
+            flex: 1;
+            background: linear-gradient(to top, var(--gold), rgba(201, 168, 76, 0.3));
+            border-radius: 2px 2px 0 0;
+        }
+
+        /* STATS */
+        .stats-strip {
+            padding: 40px 5%;
+            background: rgba(201, 168, 76, 0.06);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 24px 20px;
+            position: relative;
+        }
+
+        .stat-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: var(--border);
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            font-weight: 500;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .stat-suffix {
+            font-size: 22px;
+            color: var(--gold-light);
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 100px 5%;
+        }
+
+        .section-tag {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            font-weight: 500;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-tag::before {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .section-title em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .section-sub {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 560px;
+            font-weight: 300;
+        }
+
+        /* SERVICES */
+        .services-section {
+            background: var(--navy-mid);
+        }
+
+        .services-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 60px;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .service-card {
+            background: var(--navy-mid);
+            padding: 36px 28px;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.3s;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            background: rgba(201, 168, 76, 0.06);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(201, 168, 76, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            background: rgba(201, 168, 76, 0.18);
+        }
+
+        .service-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .service-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .service-arrow {
+            position: absolute;
+            top: 28px;
+            right: 24px;
+            color: var(--gold);
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: all 0.3s;
+            font-size: 18px;
+        }
+
+        .service-card:hover .service-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* WHY US */
+        .why-section {
+            background: var(--navy);
+        }
+
+        .why-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .why-visual {
+            position: relative;
+            height: 480px;
+        }
+
+        .why-big-card {
+            position: absolute;
+            width: 320px;
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px;
+            overflow: hidden;
+        }
+
+        .why-big-card::after {
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.15), transparent 70%);
+            border-radius: 50%;
+        }
+
+        .why-small-card {
+            position: absolute;
+            width: 260px;
+            bottom: 40px;
+            right: 0;
+            background: rgba(201, 168, 76, 0.08);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-radius: 16px;
+            padding: 28px;
+            animation: float 5s 0.5s ease-in-out infinite;
+        }
+
+        .why-list {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .why-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .why-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 300;
+            color: rgba(201, 168, 76, 0.2);
+            line-height: 1;
+            min-width: 48px;
+        }
+
+        .why-item-content h4 {
+            font-size: 17px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .why-item-content p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* CALCULATORS */
+        .calc-section {
+            background: linear-gradient(160deg, var(--navy-mid), var(--navy));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calc-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.07), transparent 60%);
+            border-radius: 50%;
+        }
+
+        .calc-tabs {
+            display: flex;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 4px;
+            margin-bottom: 48px;
+            width: fit-content;
+        }
+
+        .calc-tab {
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 14px;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s;
+            background: none;
+            border: none;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .calc-tab.active {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        .calc-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .calc-panel {
+            display: none;
+        }
+
+        .calc-panel.active {
+            display: block;
+        }
+
+        .calc-input-group {
+            margin-bottom: 28px;
+        }
+
+        .calc-input-group label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .calc-input-group label span {
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .range-slider {
+            width: 100%;
+            height: 4px;
+            -webkit-appearance: none;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            outline: none;
+        }
+
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.15);
+        }
+
+        .calc-result {
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.1), rgba(201, 168, 76, 0.05));
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .result-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .result-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 52px;
+            font-weight: 500;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .result-sub {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        .result-breakdown {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .breakdown-item {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 10px;
+            padding: 16px;
+        }
+
+        .breakdown-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .breakdown-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--white);
+        }
+
+        /* TESTIMONIALS */
+        .testimonials-section {
+            background: var(--navy-mid);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(201, 168, 76, 0.35);
+            transform: translateY(-4px);
+        }
+
+        .quote-icon {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 80px;
+            color: rgba(201, 168, 76, 0.15);
+            line-height: 0.7;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 28px;
+            font-weight: 300;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .author-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .author-name {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .author-role {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 13px;
+            margin-bottom: 16px;
+        }
+
+        /* PARTNERS */
+        .partners-section {
+            padding: 60px 5%;
+            border-top: 1px solid var(--border);
+        }
+
+        .partners-label {
+            text-align: center;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .partners-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .partner-item {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.25);
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .partner-item:hover {
+            color: rgba(201, 168, 76, 0.5);
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy-mid) 100%);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.08), transparent 60%);
+            border-radius: 50%;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* CONTACT */
+        .contact-section {
+            background: var(--navy);
+            padding: 100px 5%;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(201, 168, 76, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .contact-text {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .contact-text strong {
+            color: var(--white);
+            display: block;
+            margin-bottom: 2px;
+            font-weight: 500;
+        }
+
+        .form-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 48px;
+        }
+
+        .form-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .form-sub {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 13px 16px;
+            color: var(--white);
+            font-size: 15px;
+            font-family: 'DM Sans', sans-serif;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+        }
+
+        .form-group select option {
+            background: var(--navy-mid);
+            color: var(--white);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--navy);
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 8px;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(201, 168, 76, 0.3);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #060f1e;
+            padding: 80px 5% 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin: 20px 0 28px;
+            max-width: 300px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-btn {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            color: var(--text-muted);
+        }
+
+        .social-btn:hover {
+            background: rgba(201, 168, 76, 0.1);
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .footer-col h5 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer-rera {
+            font-size: 12px;
+            color: rgba(201, 168, 76, 0.5);
+            background: rgba(201, 168, 76, 0.06);
+            border: 1px solid rgba(201, 168, 76, 0.12);
+            padding: 6px 14px;
+            border-radius: 100px;
+        }
+
+        /* WHATSAPP */
+        .whatsapp-fab {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 58px;
+            height: 58px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            z-index: 200;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.2s;
+            animation: waBounce 2s 3s ease-in-out infinite;
+        }
+
+        .whatsapp-fab:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes waBounce {
+
+            0%,
+            100% {
+                transform: scale(1)
+            }
+
+            50% {
+                transform: scale(1.06)
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: all 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-layout,
+            .calc-layout,
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .why-visual {
+                height: 300px;
+            }
+
+            .stat-item:not(:last-child)::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#" class="nav-logo">
+            <div class="logo-icon">A</div>
+            <div class="logo-text">Ambay <span>Capital</span></div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#calculators">Calculators</a></li>
+            <li><a href="#testimonials">Clients</a></li>
+            <li><a href="#contact" class="nav-cta">Book Consultation</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <div class="hero-badge"><span class="hero-badge-dot"></span> Trusted by 500+ Families Across India</div>
+            <h1>Secure Your Future with<em>Smart Financial Planning.</em></h1>
+            <p class="hero-sub">Insurance, Investments, Retirement Planning & Wealth Advisory — all under one roof. Your
+                complete financial partner for every stage of life.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-primary">✦ Book Free Consultation</a>
+                <a href="#services" class="btn-secondary">Explore Services →</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-card-stack">
+                <div class="hero-card hero-card-float1">
+                    <div class="card-label">Portfolio Growth</div>
+                    <div class="card-value">+18.4%</div>
+                    <div class="card-sub">Avg. annual returns</div>
+                    <div class="card-sparkline">
+                        <div class="sparkline-bar" style="height:30%"></div>
+                        <div class="sparkline-bar" style="height:50%"></div>
+                        <div class="sparkline-bar" style="height:40%"></div>
+                        <div class="sparkline-bar" style="height:70%"></div>
+                        <div class="sparkline-bar" style="height:60%"></div>
+                        <div class="sparkline-bar" style="height:90%"></div>
+                        <div class="sparkline-bar" style="height:100%"></div>
+                    </div>
+                </div>
+                <div class="hero-card hero-card-main">
+                    <div class="card-label">Total Assets Managed</div>
+                    <div class="card-value">₹20 Cr+</div>
+                    <div class="card-sub">Across 500+ client portfolios</div>
+                </div>
+                <div class="hero-card hero-card-float2">
+                    <div class="card-label">Claim Success Rate</div>
+                    <div class="card-value">97%</div>
+                    <div class="card-sub">Insurance claims settled</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats-strip">
+        <div class="stats-grid">
+            <div class="stat-item reveal">
+                <div class="stat-number">500<span class="stat-suffix">+</span></div>
+                <div class="stat-label">Families Protected</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-number">₹20<span class="stat-suffix">Cr+</span></div>
+                <div class="stat-label">Investments Managed</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-number">10<span class="stat-suffix">+</span></div>
+                <div class="stat-label">Years of Expertise</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-number">97<span class="stat-suffix">%</span></div>
+                <div class="stat-label">Claim Settlement Rate</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section services-section" id="services">
+        <div class="services-header">
+            <div>
+                <div class="section-tag">What We Offer</div>
+                <h2 class="section-title">Every Financial Solution,<br><em>Under One Roof.</em></h2>
+            </div>
+            <p class="section-sub">From protecting your family with the right insurance to growing your wealth through
+                smart investments — we cover it all.</p>
+        </div>
+        <div class="services-grid reveal">
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <div class="service-name">Life Insurance</div>
+                <div class="service-desc">Term plans, child plans, and retirement-linked policies to secure your loved
+                    ones' future.</div>
+                <div class="service-arrow">→</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">❤️</div>
+                <div class="service-name">Health Insurance</div>
+                <div class="service-desc">Family floater, senior citizen plans, and critical illness covers for complete
+                    health protection.</div>
+                <div class="service-arrow">→</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📈</div>
+                <div class="service-name">Mutual Funds</div>
+                <div class="service-desc">SIP investments, ELSS tax saving, and long-term wealth creation through
+                    curated fund selection.</div>
+                <div class="service-arrow">→</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚗</div>
+                <div class="service-name">Motor Insurance</div>
+                <div class="service-desc">Comprehensive car and bike insurance with hassle-free renewals and claim
+                    assistance.</div>
+                <div class="service-arrow">→</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏦</div>
+                <div class="service-name">Financial Planning</div>
+                <div class="service-desc">Personalised plans for tax saving, wealth management, and achieving your
+                    financial goals.</div>
+                <div class="service-arrow">→</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌅</div>
+                <div class="service-name">Retirement Planning</div>
+                <div class="service-desc">Build a stress-free retirement with the right corpus strategy, annuities, and
+                    pension plans.</div>
+                <div class="service-arrow">→</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <div class="service-name">Business Insurance</div>
+                <div class="service-desc">Protect your enterprise with comprehensive business liability, fire, and asset
+                    coverage.</div>
+                <div class="service-arrow">→</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✈️</div>
+                <div class="service-name">Travel Insurance</div>
+                <div class="service-desc">Domestic and international travel coverage for medical emergencies, trip
+                    cancellations, and more.</div>
+                <div class="service-arrow">→</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section why-section" id="about">
+        <div class="why-layout">
+            <div class="why-visual reveal">
+                <div class="why-big-card">
+                    <div class="card-label">Our Commitment</div>
+                    <div style="font-family:'Cormorant Garamond',serif;font-size:24px;margin:12px 0;line-height:1.3;">
+                        "We treat every client's financial future as if it were our own."</div>
+                    <div style="font-size:13px;color:var(--text-muted);margin-top:16px;">— Ambay Capital Team</div>
+                    <div
+                        style="margin-top:28px;padding-top:24px;border-top:1px solid var(--border);display:flex;gap:24px;">
+                        <div>
+                            <div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);">IRDAI
+                            </div>
+                            <div style="font-size:11px;color:var(--text-muted);">Certified Advisor</div>
+                        </div>
+                        <div>
+                            <div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);">AMFI
+                            </div>
+                            <div style="font-size:11px;color:var(--text-muted);">Registered MFD</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-small-card">
+                    <div class="card-label">Client Satisfaction</div>
+                    <div style="display:flex;align-items:baseline;gap:8px;">
+                        <div class="card-value" style="font-size:40px;">4.9</div>
+                        <div style="color:var(--gold);font-size:18px;">★</div>
+                    </div>
+                    <div class="card-sub">Based on 300+ reviews</div>
+                </div>
+            </div>
+            <div>
+                <div class="section-tag">Why Ambay Capital</div>
+                <h2 class="section-title reveal">Financial Guidance You<br><em>Can Actually Trust.</em></h2>
+                <div class="why-list">
+                    <div class="why-item reveal">
+                        <div class="why-num">01</div>
+                        <div class="why-item-content">
+                            <h4>Expert, Unbiased Advice</h4>
+                            <p>We analyse your financial profile and goals to recommend products that genuinely suit you
+                                — not what pays us the highest commission.</p>
+                        </div>
+                    </div>
+                    <div class="why-item reveal">
+                        <div class="why-num">02</div>
+                        <div class="why-item-content">
+                            <h4>End-to-End Support</h4>
+                            <p>From policy selection to claim settlement and portfolio reviews — we're with you at every
+                                step, not just at the point of sale.</p>
+                        </div>
+                    </div>
+                    <div class="why-item reveal">
+                        <div class="why-num">03</div>
+                        <div class="why-item-content">
+                            <h4>Personalised for Every Stage of Life</h4>
+                            <p>Whether you're a young professional, a growing family, or approaching retirement — we
+                                have solutions tailored precisely to your situation.</p>
+                        </div>
+                    </div>
+                    <div class="why-item reveal">
+                        <div class="why-num">04</div>
+                        <div class="why-item-content">
+                            <h4>Transparent & Accountable</h4>
+                            <p>No hidden charges, no jargon. We explain every recommendation clearly so you always know
+                                where your money is going.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section calc-section" id="calculators">
+        <div class="section-tag">Financial Tools</div>
+        <h2 class="section-title reveal">Plan Smarter with Our<br><em>Free Calculators.</em></h2>
+        <p class="section-sub reveal" style="margin-bottom:48px;">Estimate returns, plan your SIP, or figure out the
+            right insurance cover for your family.</p>
+        <div class="calc-tabs">
+            <button class="calc-tab active" onclick="switchCalc('sip',this)">SIP Calculator</button>
+            <button class="calc-tab" onclick="switchCalc('retirement',this)">Retirement</button>
+            <button class="calc-tab" onclick="switchCalc('insurance',this)">Insurance Cover</button>
+        </div>
+        <div class="calc-layout">
+            <div>
+                <div id="calc-sip" class="calc-panel active">
+                    <div class="calc-input-group"><label>Monthly SIP Amount <span
+                                id="sip-amount-val">₹5,000</span></label><input type="range" class="range-slider"
+                            min="500" max="100000" step="500" value="5000" oninput="updateSIP()" id="sip-amount"></div>
+                    <div class="calc-input-group"><label>Expected Annual Return <span
+                                id="sip-return-val">12%</span></label><input type="range" class="range-slider" min="6"
+                            max="20" step="0.5" value="12" oninput="updateSIP()" id="sip-return"></div>
+                    <div class="calc-input-group"><label>Investment Duration <span id="sip-years-val">10
+                                years</span></label><input type="range" class="range-slider" min="1" max="30" step="1"
+                            value="10" oninput="updateSIP()" id="sip-years"></div>
+                </div>
+                <div id="calc-retirement" class="calc-panel">
+                    <div class="calc-input-group"><label>Current Age <span id="ret-age-val">30
+                                years</span></label><input type="range" class="range-slider" min="20" max="55" step="1"
+                            value="30" oninput="updateRetirement()" id="ret-age"></div>
+                    <div class="calc-input-group"><label>Monthly Savings <span
+                                id="ret-savings-val">₹10,000</span></label><input type="range" class="range-slider"
+                            min="1000" max="200000" step="1000" value="10000" oninput="updateRetirement()"
+                            id="ret-savings"></div>
+                    <div class="calc-input-group"><label>Expected Return <span
+                                id="ret-return-val">10%</span></label><input type="range" class="range-slider" min="6"
+                            max="18" step="0.5" value="10" oninput="updateRetirement()" id="ret-return"></div>
+                </div>
+                <div id="calc-insurance" class="calc-panel">
+                    <div class="calc-input-group"><label>Annual Income <span
+                                id="ins-income-val">₹6,00,000</span></label><input type="range" class="range-slider"
+                            min="200000" max="5000000" step="50000" value="600000" oninput="updateInsurance()"
+                            id="ins-income"></div>
+                    <div class="calc-input-group"><label>Number of Dependents <span
+                                id="ins-dep-val">2</span></label><input type="range" class="range-slider" min="0"
+                            max="6" step="1" value="2" oninput="updateInsurance()" id="ins-dep"></div>
+                    <div class="calc-input-group"><label>Outstanding Loans <span
+                                id="ins-loan-val">₹10,00,000</span></label><input type="range" class="range-slider"
+                            min="0" max="10000000" step="100000" value="1000000" oninput="updateInsurance()"
+                            id="ins-loan"></div>
+                </div>
+            </div>
+            <div class="calc-result">
+                <div class="result-label" id="result-label">Estimated Corpus at Maturity</div>
+                <div class="result-value" id="result-value">₹11.6 L</div>
+                <div class="result-sub" id="result-sub">Based on your SIP inputs</div>
+                <div class="result-breakdown">
+                    <div class="breakdown-item">
+                        <div class="breakdown-label" id="b1-label">Amount Invested</div>
+                        <div class="breakdown-value" id="b1-value">₹6.0 L</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-label" id="b2-label">Est. Returns</div>
+                        <div class="breakdown-value" id="b2-value">₹5.6 L</div>
+                    </div>
+                </div>
+                <a href="#contact" class="btn-primary"
+                    style="margin-top:28px;width:100%;justify-content:center;text-decoration:none;">Get Personalised
+                    Plan →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials-section" id="testimonials">
+        <div class="section-tag">Client Stories</div>
+        <h2 class="section-title reveal">Trusted by Families<br><em>Across India.</em></h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card reveal">
+                <div class="stars">★★★★★</div><span class="quote-icon">"</span>
+                <p class="testimonial-text">Ambay Capital completely transformed how I think about money. They set up my
+                    SIP, got me adequate life insurance, and sorted my tax planning — all in one place. I finally feel
+                    financially secure.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">R</div>
+                    <div>
+                        <div class="author-name">Rahul Sharma</div>
+                        <div class="author-role">Software Engineer, Pune</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal">
+                <div class="stars">★★★★★</div><span class="quote-icon">"</span>
+                <p class="testimonial-text">When my husband was hospitalised, the claim process was completely smooth
+                    because Ambay Capital guided us at every step. Their after-sales support is unmatched. I recommend
+                    them to everyone.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">P</div>
+                    <div>
+                        <div class="author-name">Priya Mehta</div>
+                        <div class="author-role">Homemaker, Mumbai</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal">
+                <div class="stars">★★★★★</div><span class="quote-icon">"</span>
+                <p class="testimonial-text">As a business owner I needed personal and business insurance along with
+                    investment planning. Ambay Capital handled everything seamlessly. Their expertise and genuine care
+                    for clients sets them apart.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">A</div>
+                    <div>
+                        <div class="author-name">Arjun Patel</div>
+                        <div class="author-role">Business Owner, Ahmedabad</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="partners-section">
+        <p class="partners-label">Partnered with India's Leading Financial Institutions</p>
+        <div class="partners-row">
+            <div class="partner-item">LIC</div>
+            <div class="partner-item">HDFC Life</div>
+            <div class="partner-item">ICICI Prudential</div>
+            <div class="partner-item">Star Health</div>
+            <div class="partner-item">SBI Mutual Fund</div>
+            <div class="partner-item">Bajaj Allianz</div>
+            <div class="partner-item">Mirae Asset</div>
+            <div class="partner-item">Tata AIA</div>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="section-tag" style="justify-content:center;">Start Today</div>
+        <h2 class="section-title reveal">Ready to Secure Your<br><em>Financial Future?</em></h2>
+        <p class="section-sub reveal" style="margin:0 auto 40px;text-align:center;">Book a free, no-obligation
+            consultation. We'll review your coverage, investments, and create a personalised roadmap just for you.</p>
+        <div class="cta-actions reveal">
+            <a href="#contact" class="btn-primary">✦ Book Free Consultation</a>
+            <a href="https://wa.me/91XXXXXXXXXX" class="btn-secondary">💬 Chat on WhatsApp</a>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="contact-layout">
+            <div class="contact-info reveal">
+                <div class="section-tag">Get In Touch</div>
+                <h3 class="section-title" style="font-size:clamp(28px,3vw,42px);">Let's Start Your<br><em>Financial
+                        Journey.</em></h3>
+                <p>Fill out the form and one of our advisors will reach out within 24 hours for a free, no-obligation
+                    consultation.</p>
+                <div class="contact-detail">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-text"><strong>Office Address</strong>Your City, India</div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-text"><strong>Phone / WhatsApp</strong>+91 XXXXX XXXXX</div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-text"><strong>Email</strong>hello@ambaycapital.in</div>
+                </div>
+                <div
+                    style="margin-top:40px;padding:24px;background:rgba(201,168,76,0.07);border:1px solid var(--border);border-radius:12px;">
+                    <div style="font-family:'Cormorant Garamond',serif;font-size:20px;margin-bottom:8px;">IRDAI & AMFI
+                        Certified</div>
+                    <div style="font-size:13px;color:var(--text-muted);line-height:1.6;">Ambay Capital is a SEBI
+                        registered investment advisor and IRDAI licensed insurance broker. All advice is regulated and
+                        client interests are protected.</div>
+                </div>
+            </div>
+            <div class="form-card reveal">
+                <div class="form-title">Book Your Free Consultation</div>
+                <div class="form-sub">No charges, no obligations — just expert financial guidance.</div>
+                <div class="form-row">
+                    <div class="form-group"><label>First Name</label><input type="text" placeholder="Rahul"></div>
+                    <div class="form-group"><label>Last Name</label><input type="text" placeholder="Sharma"></div>
+                </div>
+                <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+91 XXXXX XXXXX">
+                </div>
+                <div class="form-group"><label>Email Address</label><input type="email" placeholder="rahul@email.com">
+                </div>
+                <div class="form-group"><label>City</label><input type="text" placeholder="Mumbai"></div>
+                <div class="form-group"><label>I'm Interested In</label>
+                    <select>
+                        <option>Life Insurance</option>
+                        <option>Health Insurance</option>
+                        <option>Motor Insurance</option>
+                        <option>Mutual Funds / SIP</option>
+                        <option>Retirement Planning</option>
+                        <option>Tax Saving</option>
+                        <option>Wealth Management</option>
+                        <option>Business Insurance</option>
+                        <option>Complete Financial Review</option>
+                    </select>
+                </div>
+                <div class="form-group"><label>Message (Optional)</label><textarea
+                        placeholder="Tell us about your financial goals..."></textarea></div>
+                <button class="form-submit"
+                    onclick="this.textContent='✓ Request Submitted! We\'ll call you shortly.'">Request Free Consultation
+                    →</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="nav-logo" style="display:inline-flex;">
+                    <div class="logo-icon">A</div>
+                    <div class="logo-text">Ambay <span>Capital</span></div>
+                </a>
+                <p>Insurance, Investments & Wealth Planning for every stage of life. Your trusted financial partner
+                    since 2015.</p>
+                <div class="footer-social">
+                    <a class="social-btn" href="#">in</a><a class="social-btn" href="#">f</a><a class="social-btn"
+                        href="#">𝕏</a><a class="social-btn" href="#">▶</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="#">Life Insurance</a></li>
+                    <li><a href="#">Health Insurance</a></li>
+                    <li><a href="#">Motor Insurance</a></li>
+                    <li><a href="#">Travel Insurance</a></li>
+                    <li><a href="#">Business Insurance</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Investments</h5>
+                <ul>
+                    <li><a href="#">Mutual Funds</a></li>
+                    <li><a href="#">SIP Planning</a></li>
+                    <li><a href="#">ELSS Tax Saving</a></li>
+                    <li><a href="#">Retirement Plans</a></li>
+                    <li><a href="#">Wealth Management</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Company</h5>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Calculators</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Ambay Capital. All rights reserved. IRDAI Reg. No. XXXXXXXXX</p>
+            <div class="footer-rera">Mutual Fund investments are subject to market risks. Read all scheme documents
+                carefully.</div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-fab" target="_blank" title="Chat on WhatsApp">💬</a>
+
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+        const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.12 });
+        reveals.forEach(r => obs.observe(r));
+
+        window.addEventListener('scroll', () => {
+            document.querySelector('nav').style.background = window.scrollY > 60 ? 'rgba(10,22,40,0.97)' : 'rgba(10,22,40,0.85)';
+        });
+
+        function switchCalc(type, btn) {
+            document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+            ['sip', 'retirement', 'insurance'].forEach(id => {
+                document.getElementById('calc-' + id).classList.toggle('active', id === type);
+            });
+            if (type === 'sip') updateSIP();
+            if (type === 'retirement') updateRetirement();
+            if (type === 'insurance') updateInsurance();
+        }
+
+        function fmt(n) {
+            if (n >= 10000000) return '₹' + (n / 10000000).toFixed(1) + ' Cr';
+            if (n >= 100000) return '₹' + (n / 100000).toFixed(1) + ' L';
+            if (n >= 1000) return '₹' + (n / 1000).toFixed(1) + ' K';
+            return '₹' + n;
+        }
+
+        function fmtInput(n) {
+            if (n >= 100000) return '₹' + (n / 100000).toFixed(1) + ' L';
+            if (n >= 1000) return '₹' + (n / 1000).toFixed(0) + ',000';
+            return '₹' + n;
+        }
+
+        function updateSIP() {
+            const amt = +document.getElementById('sip-amount').value;
+            const r = +document.getElementById('sip-return').value / 100 / 12;
+            const yrs = +document.getElementById('sip-years').value;
+            const n = yrs * 12;
+            const corpus = amt * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+            const invested = amt * n;
+            document.getElementById('sip-amount-val').textContent = fmtInput(amt);
+            document.getElementById('sip-return-val').textContent = (+document.getElementById('sip-return').value) + '%';
+            document.getElementById('sip-years-val').textContent = yrs + ' years';
+            document.getElementById('result-label').textContent = 'Estimated Corpus at Maturity';
+            document.getElementById('result-value').textContent = fmt(corpus);
+            document.getElementById('result-sub').textContent = `In ${yrs} years at ${(+document.getElementById('sip-return').value)}% p.a.`;
+            document.getElementById('b1-label').textContent = 'Amount Invested';
+            document.getElementById('b1-value').textContent = fmt(invested);
+            document.getElementById('b2-label').textContent = 'Est. Returns';
+            document.getElementById('b2-value').textContent = fmt(corpus - invested);
+        }
+
+        function updateRetirement() {
+            const age = +document.getElementById('ret-age').value;
+            const savings = +document.getElementById('ret-savings').value;
+            const r = +document.getElementById('ret-return').value / 100 / 12;
+            const yrs = 60 - age;
+            const n = yrs * 12;
+            const corpus = savings * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+            const invested = savings * n;
+            document.getElementById('ret-age-val').textContent = age + ' years';
+            document.getElementById('ret-savings-val').textContent = fmtInput(savings);
+            document.getElementById('ret-return-val').textContent = (+document.getElementById('ret-return').value) + '%';
+            document.getElementById('result-label').textContent = 'Retirement Corpus by Age 60';
+            document.getElementById('result-value').textContent = fmt(corpus);
+            document.getElementById('result-sub').textContent = `${yrs} years of investing until retirement`;
+            document.getElementById('b1-label').textContent = 'Total Invested';
+            document.getElementById('b1-value').textContent = fmt(invested);
+            document.getElementById('b2-label').textContent = 'Wealth Gained';
+            document.getElementById('b2-value').textContent = fmt(corpus - invested);
+        }
+
+        function updateInsurance() {
+            const income = +document.getElementById('ins-income').value;
+            const deps = +document.getElementById('ins-dep').value;
+            const loans = +document.getElementById('ins-loan').value;
+            const cover = (income * 15) + (deps * income * 3) + loans;
+            document.getElementById('ins-income-val').textContent = fmt(income);
+            document.getElementById('ins-dep-val').textContent = deps;
+            document.getElementById('ins-loan-val').textContent = fmt(loans);
+            document.getElementById('result-label').textContent = 'Recommended Life Cover';
+            document.getElementById('result-value').textContent = fmt(cover);
+            document.getElementById('result-sub').textContent = 'Based on income, dependents & liabilities';
+            document.getElementById('b1-label').textContent = 'Income Replacement';
+            document.getElementById('b1-value').textContent = fmt(income * 15);
+            document.getElementById('b2-label').textContent = 'Loan Coverage';
+            document.getElementById('b2-value').textContent = fmt(loans);
+        }
+
+        updateSIP();
+    </script>
+</body>
+
+</html>
