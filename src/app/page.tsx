@@ -10,11 +10,13 @@ import ContactCTA from '@/components/ContactCTA';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import WhatsAppFAB from '@/components/WhatsAppFAB';
+import ScrollReveal from '@/components/ScrollReveal';
 
 export default function HomePage() {
   return (
     <>
       <Navbar />
+      <ScrollReveal />
       <main>
         <Hero />
         <Stats />
