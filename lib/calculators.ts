@@ -41,3 +41,12 @@ export function calcInsurance(
   const incomeReplacement = annualIncome * 15;
   return { cover, incomeReplacement, loans };
 }
+
+export function calcEMI(principal: number, annualRate: number, tenureYears: number) {
+  const r = annualRate / 12 / 100;
+  const n = tenureYears * 12;
+  const emi = r === 0 ? principal / n : (principal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+  const totalAmount = emi * n;
+  const totalInterest = totalAmount - principal;
+  return { emi, principal, totalInterest, totalAmount };
+}
