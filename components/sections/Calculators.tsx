@@ -1,5 +1,5 @@
 "use client";
-import { useState, useCallback } from "react";
+import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import SectionTag from "@/components/ui/SectionTag";
 import { PrimaryButton } from "@/components/ui/Buttons";
@@ -119,7 +119,7 @@ export default function Calculators({ initialTab = "sip" }: { initialTab?: CalcT
   const insResult = calcInsurance(insIncome, insDep, insLoan);
   const emiResult = calcEMI(emiPrincipal, emiRate, emiYears);
 
-  const getResult = useCallback((): ResultCardProps => {
+  const resultData = useMemo((): ResultCardProps => {
     if (activeTab === "sip") {
       return {
         label: "Estimated Corpus at Maturity",
@@ -162,7 +162,7 @@ export default function Calculators({ initialTab = "sip" }: { initialTab?: CalcT
       b2Label: "Loan Coverage",
       b2Value: formatINR(insResult.loans),
     };
-  }, [activeTab, sipResult, retResult, insResult, emiResult, sipYears, sipReturn, retResult.years, emiYears, emiRate]);
+  }, [activeTab, sipResult, retResult, insResult, emiResult, sipYears, sipReturn, emiYears, emiRate]);
 
   const TABS: { id: CalcTab; label: string }[] = [
     { id: "sip", label: "SIP Calculator" },
@@ -351,7 +351,7 @@ export default function Calculators({ initialTab = "sip" }: { initialTab?: CalcT
           </div>
 
           {/* Result */}
-          <ResultCard {...getResult()} />
+          <ResultCard {...resultData} />
         </div>
       </div>
     </section>

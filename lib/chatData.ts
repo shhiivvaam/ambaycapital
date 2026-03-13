@@ -17,7 +17,7 @@ export interface BotMessage {
 export const BOT_KNOWLEDGE: Record<string, BotMessage> = {
   // ── MAIN MENU ──
   start: {
-    text: "Hello! 👋 I'm **Arjun**, your virtual financial advisor from **Ambay Capital**.\n\nI can help you with anything related to our services, plans, and how we work. What would you like to explore today?",
+    text: "Hello! 👋 I'm **Shivam**, your virtual financial advisor from **Ambay Capital**.\n\nI can help you with anything related to our services, plans, and how we work. What would you like to explore today?",
     options: [
       { label: "🛡️ Insurance Plans", value: "insurance" },
       { label: "📈 Investments & Funds", value: "investments" },
