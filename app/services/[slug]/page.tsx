@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { servicesData } from "@/lib/servicesData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppFab from "@/components/ui/WhatsAppFab";
+import ChatBot from "@/components/ui/ChatBot";
 import Link from "next/link";
 import SectionTag from "@/components/ui/SectionTag";
 import Contact from "@/components/sections/Contact";
@@ -107,7 +107,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <Contact />
 
       <Footer />
-      <WhatsAppFab />
+      <ChatBot />
     </main>
   );
 }

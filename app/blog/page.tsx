@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppFab from "@/components/ui/WhatsAppFab";
+import ChatBot from "@/components/ui/ChatBot";
 import SectionTag from "@/components/ui/SectionTag";
 import Link from "next/link";
 import Contact from "@/components/sections/Contact";
@@ -101,7 +101,7 @@ export default function BlogPage() {
       <Contact />
 
       <Footer />
-      <WhatsAppFab />
+      <ChatBot />
     </main>
   );
 }

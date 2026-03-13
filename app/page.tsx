@@ -9,7 +9,7 @@ import Partners from "@/components/sections/Partners";
 import CtaBanner from "@/components/sections/CtaBanner";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/Footer";
-import WhatsAppFab from "@/components/ui/WhatsAppFab";
+import ChatBot from "@/components/ui/ChatBot";
 
 export default function Home() {
   return (
@@ -25,7 +25,7 @@ export default function Home() {
       <CtaBanner />
       <Contact />
       <Footer />
-      <WhatsAppFab />
+      <ChatBot />
     </main>
   );
 }

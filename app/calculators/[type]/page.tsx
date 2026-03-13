@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppFab from "@/components/ui/WhatsAppFab";
+import ChatBot from "@/components/ui/ChatBot";
 import Calculators from "@/components/sections/Calculators";
 
 export function generateStaticParams() {
@@ -27,7 +27,7 @@ export default async function CalculatorPage({ params }: { params: Promise<{ typ
       </div>
 
       <Footer />
-      <WhatsAppFab />
+      <ChatBot />
     </main>
   );
 }
