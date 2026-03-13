@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --navy: #0a1628;
+  --navy-mid: #112240;
+  --navy-light: #1a3460;
+  --gold: #c9a84c;
+  --gold-light: #e2c97e;
+  --text-muted: #8a9ab5;
+  --border: rgba(201, 168, 76, 0.2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--navy);
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* Range slider */
+input[type='range'] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  outline: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #c9a84c, #e2c97e);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.15);
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #c9a84c, #e2c97e);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.15);
+}
+
+/* Select styling */
+select option {
+  background: var(--navy-mid);
+  color: white;
+}
+
+@layer utilities {
+  .text-gold { color: var(--gold); }
+  .text-gold-light { color: var(--gold-light); }
+  .text-muted { color: var(--text-muted); }
+  .bg-navy { background: var(--navy); }
+  .bg-navy-mid { background: var(--navy-mid); }
+  .bg-navy-light { background: var(--navy-light); }
+  .border-gold { border-color: var(--border); }
+
+  .font-serif { font-family: 'Cormorant Garamond', serif; }
+
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, #c9a84c 0%, #e2c97e 100%);
+  }
+
+  .hero-grid-bg {
+    background-image:
+      linear-gradient(rgba(201, 168, 76, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201, 168, 76, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 80%);
+    mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 80%);
+  }
+}
