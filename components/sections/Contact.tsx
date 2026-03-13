@@ -23,13 +23,34 @@ export default function Contact() {
     email: "", city: "", interest: CONSULTATION_INTERESTS[0], message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        alert("Something went wrong. Please try again or WhatsApp us directly.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -158,12 +179,14 @@ export default function Contact() {
 
               <motion.button
                 type="submit"
+                disabled={isSubmitting}
                 whileHover={{ y: -2, boxShadow: "0 8px 24px rgba(201,168,76,0.3)" }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-4 rounded-lg font-semibold text-[15px] text-[#0a1628]
-                  bg-gradient-to-br from-[#c9a84c] to-[#e2c97e] mt-2 cursor-pointer"
+                className={`w-full py-4 rounded-lg font-semibold text-[15px] text-[#0a1628]
+                  bg-gradient-to-br from-[#c9a84c] to-[#e2c97e] mt-2 cursor-pointer 
+                  ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""}`}
               >
-                Request Free Consultation →
+                {isSubmitting ? "Sending Request..." : "Request Free Consultation →"}
               </motion.button>
             </form>
           )}
