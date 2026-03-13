@@ -9,9 +9,10 @@ import {
   calcSIP,
   calcRetirement,
   calcInsurance,
+  calcEMI,
 } from "@/lib/calculators";
 
-type CalcTab = "sip" | "retirement" | "insurance";
+type CalcTab = "sip" | "retirement" | "insurance" | "emi";
 
 interface SliderProps {
   label: string;
@@ -90,8 +91,8 @@ function ResultCard({ label, value, sub, b1Label, b1Value, b2Label, b2Value }: R
   );
 }
 
-export default function Calculators() {
-  const [activeTab, setActiveTab] = useState<CalcTab>("sip");
+export default function Calculators({ initialTab = "sip" }: { initialTab?: CalcTab }) {
+  const [activeTab, setActiveTab] = useState<CalcTab>(initialTab);
 
   // SIP state
   const [sipAmount, setSipAmount] = useState(5000);
@@ -108,9 +109,15 @@ export default function Calculators() {
   const [insDep, setInsDep] = useState(2);
   const [insLoan, setInsLoan] = useState(1000000);
 
+  // EMI state
+  const [emiPrincipal, setEmiPrincipal] = useState(1000000);
+  const [emiRate, setEmiRate] = useState(8.5);
+  const [emiYears, setEmiYears] = useState(5);
+
   const sipResult = calcSIP(sipAmount, sipReturn, sipYears);
   const retResult = calcRetirement(retAge, retSavings, retReturn);
   const insResult = calcInsurance(insIncome, insDep, insLoan);
+  const emiResult = calcEMI(emiPrincipal, emiRate, emiYears);
 
   const getResult = useCallback((): ResultCardProps => {
     if (activeTab === "sip") {
@@ -135,6 +142,17 @@ export default function Calculators() {
         b2Value: formatINR(retResult.returns),
       };
     }
+    if (activeTab === "emi") {
+      return {
+        label: "Monthly EMI",
+        value: formatINR(emiResult.emi),
+        sub: `For ${emiYears} years at ${emiRate}% p.a.`,
+        b1Label: "Principal",
+        b1Value: formatINR(emiResult.principal),
+        b2Label: "Total Interest",
+        b2Value: formatINR(emiResult.totalInterest),
+      };
+    }
     return {
       label: "Recommended Life Cover",
       value: formatINR(insResult.cover),
@@ -144,12 +162,13 @@ export default function Calculators() {
       b2Label: "Loan Coverage",
       b2Value: formatINR(insResult.loans),
     };
-  }, [activeTab, sipResult, retResult, insResult, sipYears, sipReturn, retResult.years]);
+  }, [activeTab, sipResult, retResult, insResult, emiResult, sipYears, sipReturn, retResult.years, emiYears, emiRate]);
 
   const TABS: { id: CalcTab; label: string }[] = [
     { id: "sip", label: "SIP Calculator" },
     { id: "retirement", label: "Retirement" },
     { id: "insurance", label: "Insurance Cover" },
+    { id: "emi", label: "EMI Calculator" },
   ];
 
   return (
@@ -190,13 +209,13 @@ export default function Calculators() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-[16px] text-[#8a9ab5] leading-relaxed max-w-[560px] font-light mb-12"
         >
-          Estimate returns, plan your SIP, or figure out the right insurance
+          Estimate returns, plan your SIP, figure out EMI, or calculate the right insurance
           cover for your family.
         </motion.p>
 
         {/* Tabs */}
         <div
-          className="flex gap-1 p-1 rounded-lg border border-[rgba(201,168,76,0.2)] 
+          className="flex flex-wrap gap-1 p-1 rounded-lg border border-[rgba(201,168,76,0.2)] 
             bg-white/[0.04] w-fit mb-12"
         >
           {TABS.map((tab) => (
@@ -217,7 +236,7 @@ export default function Calculators() {
         {/* Calc grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Inputs */}
-          <div>
+          <div className="min-h-[300px]">
             {activeTab === "sip" && (
               <motion.div
                 key="sip"
@@ -298,6 +317,34 @@ export default function Calculators() {
                   displayValue={formatINR(insLoan)}
                   min={0} max={10000000} step={100000}
                   value={insLoan} onChange={setInsLoan}
+                />
+              </motion.div>
+            )}
+
+            {activeTab === "emi" && (
+              <motion.div
+                key="emi"
+                initial={{ opacity: 0, x: -12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.35 }}
+              >
+                <Slider
+                  label="Loan Amount"
+                  displayValue={formatINR(emiPrincipal)}
+                  min={100000} max={50000000} step={100000}
+                  value={emiPrincipal} onChange={setEmiPrincipal}
+                />
+                <Slider
+                  label="Interest Rate"
+                  displayValue={`${emiRate}%`}
+                  min={5} max={20} step={0.5}
+                  value={emiRate} onChange={setEmiRate}
+                />
+                <Slider
+                  label="Loan Tenure"
+                  displayValue={`${emiYears} years`}
+                  min={1} max={30} step={1}
+                  value={emiYears} onChange={setEmiYears}
                 />
               </motion.div>
             )}
