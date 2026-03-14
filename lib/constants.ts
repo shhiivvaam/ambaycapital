@@ -108,14 +108,30 @@ export const TESTIMONIALS = [
 ];
 
 export const PARTNERS = [
-  "LIC",
-  "HDFC Life",
-  "ICICI Prudential",
-  "Star Health",
-  "SBI Mutual Fund",
-  "Bajaj Allianz",
-  "Mirae Asset",
-  "Tata AIA",
+  { name: "LIC", domain: "licindia.in" },
+  { name: "HDFC Life", domain: "hdfclife.com" },
+  { name: "ICICI Prudential", domain: "iciciprulife.com" },
+  { name: "Star Health", domain: "starhealth.in" },
+  { name: "SBI Mutual Fund", domain: "sbimf.com" },
+  { name: "Bajaj Allianz", domain: "bajajallianzlife.com" },
+  { name: "Mirae Asset", domain: "miraeasset.com" },
+  { name: "Tata AIA", domain: "tataaia.com" },
+  { name: "Max Life", domain: "maxlifeinsurance.com" },
+  { name: "Kotak Life", domain: "kotaklife.com" },
+  { name: "HDFC ERGO", domain: "hdfcergo.com" },
+  { name: "ICICI Lombard", domain: "icicilombard.com" },
+  { name: "Niva Bupa", domain: "nivabupa.com" },
+  { name: "Care Health", domain: "careinsurance.com" },
+  { name: "Reliance General", domain: "reliancegeneral.co.in" },
+  { name: "UTI Mutual Fund", domain: "utimf.com" },
+  { name: "Nippon India MF", domain: "nipponindiamf.com" },
+  { name: "Axis Mutual Fund", domain: "axismf.com" },
+  { name: "HDFC Mutual Fund", domain: "hdfcfund.com" },
+  { name: "Aditya Birla Sun Life", domain: "adityabirlacapital.com" },
+  { name: "PNB MetLife", domain: "pnbmetlife.com" },
+  { name: "Canara Robeco", domain: "canararobeco.com" },
+  { name: "Quant Mutual Fund", domain: "quantmutual.com" },
+  { name: "DSP Mutual Fund", domain: "dspim.com" },
 ];
 
 export const CONSULTATION_INTERESTS = [
