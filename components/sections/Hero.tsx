@@ -45,8 +45,9 @@ export default function Hero() {
           {...fadeUp(0.1)}
           className="font-serif text-[clamp(42px,6vw,72px)] font-normal leading-[1.1] mb-6"
         >
-          Secure Your Future with
-          <em className="block font-serif not-italic italic text-[#c9a84c]">
+          Secure Your Future
+          <span className="block">with</span>
+          <em className="block font-serif not-italic italic text-[#c9a84c] whitespace-nowrap lg:whitespace-normal xl:whitespace-nowrap">
             Smart Financial Planning.
           </em>
         </motion.h1>
