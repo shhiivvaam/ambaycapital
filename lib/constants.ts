@@ -67,7 +67,7 @@ export const WHY_ITEMS = [
   {
     num: "01",
     title: "Expert, Unbiased Advice",
-    desc: "We analyse your financial profile and goals to recommend products that genuinely suit you — not what pays us the highest commission.",
+    desc: "We analyse your financial profile and goals to recommend products that genuinely suit you.",
   },
   {
     num: "02",
