@@ -2,20 +2,26 @@ import Link from "next/link";
 
 const FOOTER_LINKS = {
   Services: [
-    "Life Insurance",
-    "Health Insurance",
-    "Motor Insurance",
-    "Travel Insurance",
-    "Business Insurance",
+    { label: "Life Insurance", href: "/services/life-insurance" },
+    { label: "Health Insurance", href: "/services/health-insurance" },
+    { label: "Motor Insurance", href: "/services/motor-insurance" },
+    { label: "Travel Insurance", href: "/services/travel-insurance" },
+    { label: "Business Insurance", href: "/services/business-insurance" },
   ],
   Investments: [
-    "Mutual Funds",
-    "SIP Planning",
-    "ELSS Tax Saving",
-    "Retirement Plans",
-    "Wealth Management",
+    { label: "Mutual Funds", href: "/services/mutual-funds" },
+    { label: "SIP Planning", href: "/calculators/sip" },
+    { label: "ELSS Tax Saving", href: "/services/mutual-funds" },
+    { label: "Retirement Plans", href: "/services/retirement-planning" },
+    { label: "Wealth Management", href: "/services/financial-planning" },
   ],
-  Company: ["About Us", "Blog", "Calculators", "Contact", "Privacy Policy"],
+  Company: [
+    { label: "About Us", href: "/about" },
+    { label: "Blog", href: "/blog" },
+    { label: "Calculators", href: "/calculators/sip" },
+    { label: "Contact", href: "/#contact" },
+    { label: "Privacy Policy", href: "#" },
+  ],
 };
 
 const SOCIAL = [
@@ -72,12 +78,12 @@ export default function Footer() {
               </h5>
               <ul className="space-y-2.5">
                 {links.map((link) => (
-                  <li key={link}>
+                  <li key={link.label}>
                     <Link
-                      href="#"
+                      href={link.href}
                       className="text-[14px] text-[#8a9ab5] hover:text-[#c9a84c] transition-colors duration-200"
                     >
-                      {link}
+                      {link.label}
                     </Link>
                   </li>
                 ))}
