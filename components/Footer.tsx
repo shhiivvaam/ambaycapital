@@ -14,13 +14,15 @@ const FOOTER_LINKS = {
     { label: "ELSS Tax Saving", href: "/services/mutual-funds" },
     { label: "Retirement Plans", href: "/services/retirement-planning" },
     { label: "Wealth Management", href: "/services/financial-planning" },
+    { label: "Financial Planning", href: "/services/financial-planning" },
   ],
   Company: [
     { label: "About Us", href: "/about" },
     { label: "Blog", href: "/blog" },
     { label: "Calculators", href: "/calculators/sip" },
     { label: "Contact", href: "/#contact" },
-    { label: "Privacy Policy", href: "#" },
+    { label: "Terms & Conditions", href: "/terms-conditions" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
   ],
 };
 
