@@ -79,7 +79,7 @@ export default function Hero() {
           >
             {/* Background Main Card (Total Assets Managed) */}
             <div
-              className="absolute top-6 left-4 lg:left-8 w-[340px] p-7 rounded-2xl border border-[rgba(201,168,76,0.15)] z-0 shadow-2xl"
+              className="absolute top-6 left-0 lg:-left-8 w-[340px] p-7 rounded-2xl border border-[rgba(201,168,76,0.15)] z-0 shadow-2xl"
               style={{
                 background:
                   "linear-gradient(135deg, rgba(17,34,64,0.9), rgba(26,52,96,0.9))",
