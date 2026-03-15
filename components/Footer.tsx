@@ -88,7 +88,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="pt-8 border-t border-[rgba(201,168,76,0.2)] flex flex-wrap justify-between items-center gap-4">
         <p className="text-[13px] text-[#8a9ab5]">
-          © 2025 Ambay Capital. All rights reserved. IRDAI Reg. No. XXXXXXXXX
+          © 2025 Ambay Capital. All rights reserved.
         </p>
         <span
           className="text-[12px] text-[rgba(201,168,76,0.5)] 
