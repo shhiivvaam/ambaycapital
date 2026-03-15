@@ -57,7 +57,7 @@ interface ResultCardProps {
 function ResultCard({ label, value, sub, b1Label, b1Value, b2Label, b2Value }: ResultCardProps) {
   return (
     <div
-      className="rounded-2xl p-10 text-center border border-[rgba(201,168,76,0.2)]"
+      className="rounded-2xl p-10 text-center border border-[rgba(201,168,76,0.2)] lg:-mt-44"
       style={{
         background: "linear-gradient(135deg, rgba(201,168,76,0.10), rgba(201,168,76,0.05))",
       }}
