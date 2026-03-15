@@ -28,9 +28,9 @@ const SOCIAL = [
 export default function Footer() {
   return (
     <footer className="bg-[#060f1e] pt-20 pb-10 px-[5%] border-t border-[rgba(201,168,76,0.2)]">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-16 mb-16">
+      <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-20 mb-16">
         {/* Brand */}
-        <div className="col-span-2 md:col-span-1">
+        <div className="lg:w-1/3 max-w-[400px]">
           <Link href="/" className="flex items-center gap-3 mb-5">
             <div
               className="w-10 h-10 rounded-lg flex items-center justify-center 
@@ -43,9 +43,9 @@ export default function Footer() {
               Ambay <span className="text-[#c9a84c]">Capital</span>
             </span>
           </Link>
-          <p className="text-[14px] text-[#8a9ab5] leading-relaxed mb-7 max-w-[300px]">
+          <p className="text-[14px] text-[#8a9ab5] leading-relaxed mb-7">
             Insurance, Investments &amp; Wealth Planning for every stage of
-            life. Your trusted financial partner since 2015.
+            life. Your trusted financial partner since 1999.
           </p>
           <div className="flex gap-2.5">
             {SOCIAL.map((s) => (
@@ -64,25 +64,27 @@ export default function Footer() {
         </div>
 
         {/* Link columns */}
-        {Object.entries(FOOTER_LINKS).map(([col, links]) => (
-          <div key={col}>
-            <h5 className="text-[13px] uppercase tracking-[1.5px] text-[#c9a84c] font-medium mb-5">
-              {col}
-            </h5>
-            <ul className="space-y-2.5">
-              {links.map((link) => (
-                <li key={link}>
-                  <Link
-                    href="#"
-                    className="text-[14px] text-[#8a9ab5] hover:text-[#c9a84c] transition-colors duration-200"
-                  >
-                    {link}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 sm:gap-16 lg:gap-20 lg:w-2/3 lg:justify-end">
+          {Object.entries(FOOTER_LINKS).map(([col, links]) => (
+            <div key={col}>
+              <h5 className="text-[13px] uppercase tracking-[1.5px] text-[#c9a84c] font-medium mb-5">
+                {col}
+              </h5>
+              <ul className="space-y-2.5">
+                {links.map((link) => (
+                  <li key={link}>
+                    <Link
+                      href="#"
+                      className="text-[14px] text-[#8a9ab5] hover:text-[#c9a84c] transition-colors duration-200"
+                    >
+                      {link}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Bottom bar */}
