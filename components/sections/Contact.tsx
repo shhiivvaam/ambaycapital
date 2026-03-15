@@ -134,12 +134,12 @@ export default function Contact() {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <FormField label="First Name" name="firstName" type="text" placeholder="Rahul" value={form.firstName} onChange={handleChange} />
-                <FormField label="Last Name" name="lastName" type="text" placeholder="Sharma" value={form.lastName} onChange={handleChange} />
+                <FormField label="First Name" name="firstName" type="text" placeholder="Rajesh" value={form.firstName} onChange={handleChange} />
+                <FormField label="Last Name" name="lastName" type="text" placeholder="Kumar" value={form.lastName} onChange={handleChange} />
               </div>
-              <FormField label="Phone Number" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" value={form.phone} onChange={handleChange} />
-              <FormField label="Email Address" name="email" type="email" placeholder="rahul@email.com" value={form.email} onChange={handleChange} />
-              <FormField label="City" name="city" type="text" placeholder="Mumbai" value={form.city} onChange={handleChange} />
+              <FormField label="Phone Number" name="phone" type="tel" placeholder="+91 98185 56671" value={form.phone} onChange={handleChange} />
+              <FormField label="Email Address" name="email" type="email" placeholder="ambaycapital8@gmail.com" value={form.email} onChange={handleChange} />
+              <FormField label="City" name="city" type="text" placeholder="Noida" value={form.city} onChange={handleChange} />
 
               {/* Select */}
               <div>

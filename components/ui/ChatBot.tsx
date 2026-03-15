@@ -143,7 +143,7 @@ export default function ChatBot() {
               {/* Avatar */}
               <div className="relative flex-shrink-0">
                 <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#c9a84c] to-[#e2c97e] flex items-center justify-center font-serif text-xl text-[#0a1628] font-bold">
-                  A
+                  S
                 </div>
                 <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-[#25D366] rounded-full border-2 border-[#112240]" />
               </div>
@@ -181,7 +181,7 @@ export default function ChatBot() {
                 <div key={msg.id} className={`flex gap-2.5 ${msg.from === "user" ? "flex-row-reverse" : ""}`}>
                   {msg.from === "bot" && (
                     <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#c9a84c] to-[#e2c97e] flex items-center justify-center font-serif text-xs text-[#0a1628] font-bold flex-shrink-0 mt-1">
-                      A
+                      S
                     </div>
                   )}
                   <div className={`max-w-[80%] space-y-3 ${msg.from === "user" ? "items-end" : "items-start"} flex flex-col`}>
