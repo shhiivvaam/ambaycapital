@@ -62,7 +62,7 @@ export default function Navbar() {
         ))}
         <li className="flex items-center gap-4">
           <Link
-            href="#"
+            href="https://ambaycapital.wealthmagic.in/"
             className="px-5 py-[9px] rounded-sm font-medium text-sm
               border border-[#c9a84c] text-[#c9a84c]
               hover:bg-[rgba(201,168,76,0.1)] transition-colors"
@@ -117,7 +117,7 @@ export default function Navbar() {
           ))}
           <div className="flex flex-col gap-3 mt-2">
             <Link
-              href="#"
+              href="https://ambaycapital.wealthmagic.in/"
               onClick={() => setMobileOpen(false)}
               className="text-center px-6 py-3 rounded-sm font-medium text-sm
                 border border-[#c9a84c] text-[#c9a84c] transition-colors"
