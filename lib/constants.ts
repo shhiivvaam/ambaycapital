@@ -1,9 +1,10 @@
-export const WHATSAPP_NUMBER = "9818556671";
+export const WHATSAPP_NUMBER = "919818556671";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
+export const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/BxMYzRU1YK8eyuMb6";
 
 export const CONTACT_EMAIL = "ambaycapital8@gmail.com";
 export const CONTACT_PHONE = "+91 98185 56671";
-export const CONTACT_ADDRESS = "Greater Noida, Sector 1, Uttar Pradesh, India";
+export const CONTACT_ADDRESS = "Supertech Eco Village-1, Sector 1, Greater Noida, UP 201318";
 
 export const STATS = [
   { number: "5000", suffix: "+", label: "Families Protected" },

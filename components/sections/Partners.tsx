@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { PARTNERS } from "@/lib/constants";
 
@@ -76,11 +77,12 @@ export default function Partners() {
                   hover:opacity-100 transition-all duration-700 hover:scale-110 group"
               >
                 <div className="w-24 h-10 md:w-32 md:h-12 relative flex items-center justify-center transition-all">
-                  <img
+                  <Image
                     src={`https://www.google.com/s2/favicons?sz=128&domain_url=${partner.domain}`}
                     alt={`${partner.name} logo`}
-                    className="max-w-full max-h-full object-contain filter brightness-110 transition-all"
-                    loading="lazy"
+                    fill
+                    sizes="(max-width: 768px) 96px, 128px"
+                    className="object-contain filter brightness-110 transition-all"
                     onError={(e) => {
                        e.currentTarget.parentElement!.innerHTML = `<span class="text-[#c9a84c]/40 text-[10px] font-bold tracking-tighter uppercase italic text-center">${partner.name}</span>`;
                     }}
