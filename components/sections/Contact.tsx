@@ -2,18 +2,19 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import SectionTag from "@/components/ui/SectionTag";
-import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_ADDRESS, CONSULTATION_INTERESTS } from "@/lib/constants";
+import { 
+  CONTACT_EMAIL, 
+  CONTACT_PHONE, 
+  CONSULTATION_INTERESTS, 
+  WHATSAPP_URL, 
+  GOOGLE_MAPS_URL 
+} from "@/lib/constants";
 
-interface ContactDetail {
-  icon: string;
-  label: string;
-  value: string;
-}
-
-const DETAILS: ContactDetail[] = [
-  { icon: "📍", label: "Office Address", value: CONTACT_ADDRESS },
-  { icon: "📞", label: "Phone / WhatsApp", value: CONTACT_PHONE },
-  { icon: "✉️", label: "Email", value: CONTACT_EMAIL },
+const ACTION_CARDS = [
+  { icon: "📞", label: "Direct Call", value: CONTACT_PHONE, href: "tel:+919818556671" },
+  { icon: "💬", label: "WhatsApp", value: "+91 98185 56671", href: WHATSAPP_URL, target: "_blank" },
+  { icon: "✉️", label: "Email Us", value: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` },
+  { icon: "📍", label: "Office Location", value: "Supertech Eco Village-1, Gr. Noida", href: GOOGLE_MAPS_URL, target: "_blank" },
 ];
 
 export default function Contact() {
@@ -71,25 +72,56 @@ export default function Contact() {
             <em className="italic text-[#c9a84c]">Financial Journey.</em>
           </h2>
           <p className="text-[15px] text-[#8a9ab5] leading-relaxed mb-10 font-light">
-            Fill out the form and one of our advisors will reach out within 24
-            hours for a free, no-obligation consultation.
+            Fill out the form and one of our advisors will reach out. Or, use the options below to connect with us immediately.
           </p>
 
-          <div className="flex flex-col gap-5 mb-10">
-            {DETAILS.map((d) => (
-              <div key={d.label} className="flex items-center gap-3.5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            {ACTION_CARDS.map((d) => (
+              <a 
+                key={d.label}
+                href={d.href}
+                target={d.target}
+                rel={d.target ? "noopener noreferrer" : undefined}
+                className="flex items-center gap-3.5 p-4 rounded-xl bg-white/[0.02] border border-white/5 
+                  hover:bg-white/[0.05] hover:border-[#c9a84c]/30 transition-all group"
+              >
                 <div
                   className="w-10 h-10 rounded-lg flex items-center justify-center 
-                  text-base bg-[rgba(201,168,76,0.1)] flex-shrink-0"
+                  text-[18px] bg-[rgba(201,168,76,0.1)] group-hover:bg-[#c9a84c] group-hover:text-[#0a1628] 
+                  transition-colors flex-shrink-0"
                 >
                   {d.icon}
                 </div>
-                <div>
-                  <p className="text-[14px] font-medium text-white">{d.label}</p>
-                  <p className="text-[13px] text-[#8a9ab5]">{d.value}</p>
+                <div className="overflow-hidden">
+                  <p className="text-[12px] uppercase tracking-wider text-[#8a9ab5] mb-0.5">{d.label}</p>
+                  <p className="text-[14px] font-medium text-white truncate">{d.value}</p>
                 </div>
-              </div>
+              </a>
             ))}
+          </div>
+
+          {/* Map View */}
+          <div className="relative rounded-xl overflow-hidden mb-10 border border-[rgba(201,168,76,0.15)] h-[250px] w-full bg-[#112240] group">
+            <iframe 
+              src="https://maps.google.com/maps?q=Supertech%20Eco%20Village-1,%20Sector%201,%20Greater%20Noida,%20UP%20201318&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen={false} 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+            />
+            
+            <a 
+              href={GOOGLE_MAPS_URL} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="absolute bottom-4 right-4 z-10 bg-[#0a1628]/80 backdrop-blur-md text-white px-4 py-2 rounded-lg font-medium text-[13px] 
+                shadow-xl flex items-center gap-2 hover:bg-[#c9a84c] hover:text-[#0a1628] transition-colors border border-white/10"
+            >
+              <span className="text-base">🗺️</span> Get Directions
+            </a>
           </div>
 
           {/* Certification box */}
