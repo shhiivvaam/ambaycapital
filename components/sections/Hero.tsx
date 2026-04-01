@@ -39,7 +39,7 @@ export default function Hero() {
                 animate={{ opacity: [1, 0.5, 1], scale: [1, 1.3, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               />
-              Trusted by 500+ Families Across India
+              Trusted by 5000+ Families Across India
             </span>
           </motion.div>
 
@@ -92,7 +92,7 @@ export default function Hero() {
                 ₹20 Cr+
               </p>
               <p className="text-[13px] text-[#8a9ab5] mt-1.5">
-                Across 500+ client portfolios
+                Across 5000+ client portfolios
               </p>
             </div>
 
