@@ -91,20 +91,20 @@ export const TESTIMONIALS = [
   {
     initial: "R",
     name: "Rahul Sharma",
-    role: "Software Engineer, Pune",
-    text: "Ambay Capital completely transformed how I think about money. They set up my SIP, got me adequate life insurance, and sorted my tax planning — all in one place. I finally feel financially secure.",
+    role: "Business Owner, Noida",
+    text: "I used to avoid thinking about money because it felt overwhelming. The team at Ambay Capital didn't push products at me, they actually sat down, understood my situation, and helped me start a SIP, get proper life cover, and sort out my taxes. It all happened without me running around. I genuinely feel like someone's got my back now.",
   },
   {
     initial: "P",
     name: "Priya Mehta",
-    role: "Homemaker, Mumbai",
-    text: "When my husband was hospitalised, the claim process was completely smooth because Ambay Capital guided us at every step. Their after-sales support is unmatched. I recommend them to everyone.",
+    role: "Working Professional, Mumbai",
+    text: "When my husband was hospitalised, the last thing I wanted to deal with was paperwork. But Ambay Capital was right there, they told us exactly what documents to submit, followed up on our behalf, and the claim came through without any back and forth. I've since referred them to my sister and two neighbours. When something works, you tell people.",
   },
   {
     initial: "A",
     name: "Arjun Patel",
     role: "Business Owner, Ahmedabad",
-    text: "As a business owner I needed personal and business insurance along with investment planning. Ambay Capital handled everything seamlessly. Their genuine care for clients sets them apart.",
+    text: "Running a business means your personal and professional finances are always tangled up. I needed insurance for both, and a plan for the future on top of that. Ambay Capital handled all of it without making me repeat myself ten times. They understood what I needed, gave me straightforward advice, and followed through. That's rare.",
   },
 ];
 
